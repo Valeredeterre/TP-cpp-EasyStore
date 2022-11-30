@@ -1,7 +1,6 @@
-#pragma once
 #include <iostream>
-#include "produit.h"
 #include <vector>
+#include "shoppingCartLine.cpp"
 
 class Client {
     public:
@@ -9,6 +8,7 @@ class Client {
         int getId();
         std::string getFirstName();
         std::string getLastName();
+        void getShoppingCart();
         std::string getClient();
         void getShoppingCart();
         bool addItems();
@@ -21,5 +21,5 @@ class Client {
         int _id; 
         std::string _firstName;
         std::string _lastName; 
-        std::vector<Produit> _shoppingCart;
+        std::vector<ShoppingCartLine> _shoppingCart;
 };

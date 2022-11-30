@@ -1,18 +1,18 @@
 #include "produit.h"
 
-Produit::Produit(std::string name, std::string description, float price, int quantity)
-    : _name(name), _description(description), _price(price), _avaiableQuantity(quantity)
+Produit::Produit(std::string nom, std::string description, double prix, int quantity)
+    : _name(nom), _description(description), price(prix), avaiableQuantity(quantity)
 {
 }
 
 unsigned int Produit::getAvaiableQuantity() const
 {
-    return _avaiableQuantity;
+    return avaiableQuantity;
 }
 
 void Produit::setAvaiableQuantity(unsigned int quantity)
 {
-    _avaiableQuantity = quantity;
+    avaiableQuantity = quantity;
 }
 
 std::string Produit::getName() const
@@ -27,17 +27,5 @@ std::string Produit::getDescription() const
 
 float Produit::getPrice() const
 {
-    return _price;
+    return price;
 }
-
-std::ostream& operator<<(std::ostream& os, const Produit& produit)
-{
-    os << produit.getName() << " " << produit.getDescription() << " " << produit.getPrice() << " " << produit.getAvaiableQuantity() << "\n";
-    return os;
-}
-
-std::string Produit::getProduct() const
-{
-	return _name + " " + _description + " " + std::to_string(_price) + " " + std::to_string(_avaiableQuantity);
-}
-
