@@ -10,6 +10,7 @@ int main()
     m1.displayStock();
     m1.updateStock("ps4", 100000);
     m1.displayStock();
+    
     m1.displayClient("john", "doe");
     m1.displayClient(1);
 
