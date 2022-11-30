@@ -1,21 +1,35 @@
-#include "Client.h"
+#include "client.h"
 
-Client::Client(std::string id, std::string firstName, std::string lastName, std::vector<int> shoppingCart): _id(id), _firstName(firstName), _lastName(lastName), _vector<int>(vector<int>){
+Client::Client(int id, std::string firstName, std::string lastName)
+: _id(id), _firstName(firstName), _lastName(lastName)
+{
 }
 
-std::string Client::getId(){
+int Client::getId()
+{
     return _id;
 }
 
-std::string Client::getFirstName(){
+std::string Client::getFirstName()
+{
     return _firstName;
 }
 
-std::string Client::getLastName(){
+std::string Client::getLastName()
+{
     return _lastName;
 }
 
-std::vector<int> Client::getShoppingCart(){
-    return _shoppingCart;
+void Client::getShoppingCart()
+{
+    std::string shoppingCart;
+    for (auto it = _shoppingCart.begin(); it < _shoppingCart.end(); it++)
+    {
+        std::cout << *it << "\n";
+    }
 }
 
+std::string Client::getClient()
+{
+    return _id + " " + _firstName + " " + _lastName;
+}

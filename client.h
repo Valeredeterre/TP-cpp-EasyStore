@@ -1,13 +1,16 @@
+#pragma once
 #include <iostream>
+#include "produit.h"
 #include <vector>
 
 class Client {
     public:
-        Client (std::string id, std::string firstName, std::string lastName, std::vector<int> shoppingCart);
-        std::string getId();
+        Client (int id, std::string firstName, std::string lastName);
+        int getId();
         std::string getFirstName();
         std::string getLastName();
-        std::vector<int> getShoppingCart();
+        std::string getClient();
+        void getShoppingCart();
         bool addItems();
         bool modifyItems();
         void removeItem();
@@ -15,8 +18,8 @@ class Client {
 
 
     private:
-        std::string _id; 
+        int _id; 
         std::string _firstName;
         std::string _lastName; 
-        std::vector<int> _shoppingCart;
+        std::vector<Produit> _shoppingCart;
 };
